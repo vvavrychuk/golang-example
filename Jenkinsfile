@@ -5,6 +5,7 @@ node {
                 checkout scm
                 dir('hello') {
                     sh 'go build'
+                    archiveArtifacts artifacts: 'hello', fingerprint: true
                 }
             }
         }
